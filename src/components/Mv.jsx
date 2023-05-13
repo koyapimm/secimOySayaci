@@ -122,6 +122,28 @@ const Mv = () => {
                     </div>
                 </li>
             </div>
+            <div className=' border-white border-2 pl-2 mt-4'>
+                <div className='flex justify-between pr-10 border-b-4'>
+                    <div className=' text-lg font-bold sm:font-extrabold sm:text-2xl mt-auto mb-0 sm:border-white sm:border-t-2 px-6 py-2'>Emek ve Özgürlük İttifakı</div>
+                    <div className=' my-auto'>
+                        <Sayac />
+                    </div>
+                </div>
+                <li className=' flex flex-row py-auto sm:py-2 border-gray-300 border-b-2'>
+                    <img src={YesilSol} alt="Büyük Birlik Partisi" className=' w-10 sm:w-20 mx-auto my-auto pr-1 border-white border-r-2' />
+                    <span className=' font-bold text-sm sm:text-xl my-auto sm:pl-3 w-full pl-1'>Yeşil Sol Parti</span>
+                    <div className='sm:mr-10 my-auto'>
+                        <Sayac />
+                    </div>
+                </li>
+                <li className=' flex flex-row py-auto sm:py-2 '>
+                    <img src={Tip} alt="Mhp" className=' w-10 sm:w-20 mx-auto my-auto pr-1 border-white border-r-2' />
+                    <span className=' font-bold text-sm sm:text-xl my-auto sm:pl-3 w-full pl-1'>Türkiye İşçi Partisi</span>
+                    <div className='sm:mr-10 my-auto'>
+                        <Sayac />
+                    </div>
+                </li>
+            </div>
             <li className=' flex flex-row py-auto sm:py-2 border-gray-400 border-b-2'>
                 <img src={AdaletBirlik} alt="Adalet Birlik Partisi" className=' w-10 sm:w-20 mx-auto my-auto px-1 border-white border-r-2' />
                 <span className=' font-bold text-sm sm:text-xl my-auto sm:pl-3 w-full pl-1'>Adalet Birlik Partisi</span>
