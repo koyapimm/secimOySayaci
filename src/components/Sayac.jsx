@@ -38,6 +38,7 @@ const Sayac = () => {
                     type="number"
                     id="Quantity"
                     value={count}
+                    onChange={e => setCount(parseInt( e.target.value ))}
                     className=" h-8 w-10 sm:h-8 sm:w-16 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none font-bold" 
                     />
 
