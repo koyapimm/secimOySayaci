@@ -27,7 +27,7 @@ import Zafer from '../assets/zafer.png'
 
 const Mv = () => {
   return (
-    <div className=' text-white'>
+    <div className=' text-white sm:mx-2'>
         <ul className='mb-4'>
             <li className=' flex flex-row py-auto sm:py-2 border-gray-400 border-b-2'>
                 <img src={Millet} alt="Millet Partisi" className=' w-10 sm:w-20 mx-auto my-auto pr-1 border-white border-r-2' />
