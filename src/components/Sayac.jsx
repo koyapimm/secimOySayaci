@@ -4,59 +4,42 @@ const Sayac = () => {
   
         const [count, setCount] = useState(0);
         let statusplus = false
-        let statusten
         if(count <= 0){
             statusplus=true
         }
-        if(count < 10){
-            statusten=true
-        }
   
     return (
-        <div className=' text-black text-center mx-auto sm:my-4 my-2'>
-            <div>
 
-                <div className="flex items-center border border-gray-200 rounded h-8">
-                    <button
-                    type="button"
-                    className={statusten ? "inline-block border-r-2 border-white py-0.5 px-2 sm:py-auto sm:px-2  text-white text-sm hover:bg-gray-700 focus:relative h-8 py-auto disabled" : "inline-block border-r-2 border-white py-0.5 px-2 sm:py-auto sm:px-2  text-white text-sm hover:bg-gray-700 focus:relative h-8 py-auto "}
-                    onClick={() => setCount(count - 10)}
-                    disabled={statusten}
-                    >
-                        -10
-                    </button>
-                    <button
-                    type="button"
-                    className={statusplus ? "inline-block py-0.5 px-2 sm:py-auto sm:px-2 text-white hover:bg-gray-700 focus:relative h-8 disabled" :"inline-block py-0.5 px-2 sm:py-auto sm:px-2 text-white hover:bg-gray-700 focus:relative h-8 "}
-                    onClick={() => setCount(count - 1)}
-                    disabled={statusplus}
-                    >
-                        -
-                    </button>
+        <div class="custom-number-input h-10 w-32 m-auto">
+            <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+                <button 
+                data-action="decrement" 
+                className={statusplus ? "bg-gray-300 text-gray-600 h-full w-20 rounded-l cursor-pointer outline-none disabled" : "bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"}
+                onClick={() => setCount(count - 1)}
+                disabled={statusplus}
+                >
+                    <span class="m-auto text-2xl font-thin">
+                        −
+                    </span>
+                </button>
+                <input 
+                type="number" 
+                value={count}
+                onChange={e => setCount(parseInt( e.target.value ))}
+                class=" focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none [-moz-appearance:_textfield] sm:text-sm [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none" 
+                name="custom-input-number" 
+                />
 
-                    <input
-                    type="number"
-                    id="Quantity"
-                    value={count}
-                    onChange={e => setCount(parseInt( e.target.value ))}
-                    className=" h-8 w-10 sm:h-8 sm:w-16 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none font-bold" 
-                    />
-
-                    <button
-                    type="button"
-                    className="inline-block border-r-2 border-white py-0.5 px-2 sm:py-auto sm:px-2 text-white hover:bg-gray-700 focus:relative h-8"
-                    onClick={() => setCount(count + 1)}
-                    >
+                
+                <button 
+                data-action="increment" 
+                class="bg-gray-300 text-gray-700 hover:text-gray-800 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
+                onClick={() => setCount(count + 1)}
+                >
+                    <span class="m-auto text-2xl font-thin">
                         +
-                    </button>
-                    <button
-                    type="button"
-                    className="inline-block py-0.5 px-2 sm:py-auto sm:px-2 text-white text-sm hover:bg-gray-700 focus:relative h-8"
-                    onClick={() => setCount(count + 10)}
-                    >
-                        +10
-                    </button>
-                </div>
+                    </span>
+                </button>
             </div>
         </div>
     );
