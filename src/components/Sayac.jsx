@@ -3,6 +3,14 @@ import React, {useState} from 'react'
 const Sayac = () => {
   
         const [count, setCount] = useState(0);
+        let statusplus = false
+        let statusten
+        if(count <= 0){
+            statusplus=true
+        }
+        if(count < 10){
+            statusten=true
+        }
   
     return (
         <div className=' text-black text-center mx-auto sm:my-4 my-2'>
@@ -11,16 +19,17 @@ const Sayac = () => {
                 <div className="flex items-center border border-gray-200 rounded h-8">
                     <button
                     type="button"
-                    className="inline-block border-r-2 border-white py-0.5 px-2 sm:py-auto sm:px-2  text-white text-sm hover:bg-gray-700 focus:relative h-8 py-auto"
+                    className={statusten ? "inline-block border-r-2 border-white py-0.5 px-2 sm:py-auto sm:px-2  text-white text-sm hover:bg-gray-700 focus:relative h-8 py-auto disabled" : "inline-block border-r-2 border-white py-0.5 px-2 sm:py-auto sm:px-2  text-white text-sm hover:bg-gray-700 focus:relative h-8 py-auto "}
                     onClick={() => setCount(count - 10)}
+                    disabled={statusten}
                     >
                         -10
                     </button>
                     <button
                     type="button"
-                    className="inline-block py-0.5 px-2 sm:py-auto sm:px-2 text-white hover:bg-gray-700 focus:relative h-8"
+                    className={statusplus ? "inline-block py-0.5 px-2 sm:py-auto sm:px-2 text-white hover:bg-gray-700 focus:relative h-8 disabled" :"inline-block py-0.5 px-2 sm:py-auto sm:px-2 text-white hover:bg-gray-700 focus:relative h-8 "}
                     onClick={() => setCount(count - 1)}
-                    
+                    disabled={statusplus}
                     >
                         -
                     </button>
