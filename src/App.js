@@ -1,24 +1,17 @@
 import React from 'react';
 import { Tabs } from 'antd';
-import { TabsProps } from 'antd';
-import Cb from './components/Cb'
-import Mv from './components/Mv'
+import Cb2 from './components/Cb2'
 
-const onChange = (key: string) => {
+const onChange = (key) => {
   console.log(key);
 };
 
-const items: TabsProps['items'] = [
+const items = [
   {
     key: '1',
     label: `Cumhurbaşkanlığı Seçimi`,
-    children: <Cb />,
-  },
-  {
-    key: '2',
-    label: `Milletvekilliği Seçimi`,
-    children: <Mv />,
-  },
+    children: <Cb2 />,
+  }
 ];
 
 const App = () => <Tabs defaultActiveKey="1" items={items} onChange={onChange}  className='text-white'/>;
